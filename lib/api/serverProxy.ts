@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const backend =
-  process.env.NOTEHUB_BACKEND_URL || "https://notehub-api.goit.study";
+import { backendUrl } from "../../app/api/api";
 
 export async function proxyRequest(request: NextRequest, path: string) {
   const headers = new Headers();
@@ -9,14 +7,17 @@ export async function proxyRequest(request: NextRequest, path: string) {
   const cookie = request.headers.get("cookie");
   if (contentType) headers.set("content-type", contentType);
   if (cookie) headers.set("cookie", cookie);
-  const response = await fetch(`${backend}${path}${request.nextUrl.search}`, {
-    method: request.method,
-    headers,
-    body:
-      request.method === "GET" || request.method === "HEAD"
-        ? undefined
-        : await request.text(),
-  });
+  const response = await fetch(
+    `${backendUrl}${path}${request.nextUrl.search}`,
+    {
+      method: request.method,
+      headers,
+      body:
+        request.method === "GET" || request.method === "HEAD"
+          ? undefined
+          : await request.text(),
+    },
+  );
   const result = new NextResponse(response.body, {
     status: response.status,
     headers: {
