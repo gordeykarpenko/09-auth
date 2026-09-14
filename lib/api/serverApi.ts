@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+import type { AxiosResponse } from "axios";
 import { api } from "./api";
 import type { Note } from "../../types/note";
 import type { FetchNotesParams, FetchNotesResponse } from "./clientApi";
@@ -28,9 +29,8 @@ export async function getMe(): Promise<User> {
   });
   return data;
 }
-export async function checkSession(): Promise<User | null> {
-  const { data } = await api.get<User | null>("/auth/session", {
+export async function checkSession(): Promise<AxiosResponse<User | null>> {
+  return api.get<User | null>("/auth/session", {
     headers: await cookieHeaders(),
   });
-  return data;
 }

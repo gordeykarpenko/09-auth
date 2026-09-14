@@ -1,3 +1,6 @@
-/** Shared backend configuration for the route handlers in this directory. */
-export const backendUrl =
-  process.env.NOTEHUB_BACKEND_URL || "https://notehub-api.goit.study";
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL: "https://notehub-api.goit.study",
+  withCredentials: true,
+});
