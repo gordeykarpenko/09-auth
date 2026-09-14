@@ -1,0 +1,36 @@
+{
+  "name": "09-auth",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "axios": "latest",
+    "modern-normalize": "latest",
+    "@tanstack/react-query": "latest",
+    "formik": "latest",
+    "use-debounce": "latest",
+    "yup": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hot-toast": "latest",
+    "react-paginate": "latest",
+    "zustand": "latest",
+    "cookie": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "next": "latest",
+    "@types/node": "latest"
+  }
+}

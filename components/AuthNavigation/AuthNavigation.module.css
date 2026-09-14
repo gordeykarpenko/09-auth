@@ -1,0 +1,19 @@
+.navigationItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navigationLink {
+  color: inherit;
+  text-decoration: none;
+}
+.userEmail {
+  font-size: 13px;
+}
+.logoutButton {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}

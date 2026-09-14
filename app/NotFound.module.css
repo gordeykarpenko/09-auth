@@ -1,0 +1,14 @@
+.container {
+  flex: 1;
+  text-align: center;
+  padding: 80px 20px;
+}
+.title {
+  margin: 0 0 16px;
+  font-size: 36px;
+}
+.description {
+  margin: 0;
+  color: #6c757d;
+  font-size: 18px;
+}
